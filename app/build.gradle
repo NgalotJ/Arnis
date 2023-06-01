@@ -86,6 +86,13 @@ dependencies {
 
     // libsvm library
     implementation files('libs/libsvm.jar')
+
+    // Apache Commons Math
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+
+    // Apache Commons IO library
+    implementation 'commons-io:commons-io:2.11.0'
+
 }
 /*
     // CameraX core library using the camera2 implementation
