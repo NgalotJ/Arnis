@@ -34,6 +34,7 @@
     <string name="label_num_poses">Number of Poses</string>
     <string name="label_delegate">Delegate</string>
     <string name="label_models">Model</string>
+    <string name="arnis_banner">arnis banner</string>
 
     <string-array name="delegate_spinner_titles">
         <item>CPU</item>

@@ -6,10 +6,13 @@ import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.arnis.databinding.ActivityMainBinding
+import android.util.Log
+import com.example.arnis.SVCModelHelper.Companion.TAG
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private val viewModel : MainViewModel by viewModels()
+    private lateinit var svcModelHelper: SVCModelHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +26,13 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.navigation.setOnNavigationItemReselectedListener {
             // ignore the reselection
         }
+
+        svcModelHelper = SVCModelHelper(applicationContext)
+
+        // Example usage: Make a prediction
+        val features = // Your input features as a DoubleArray
+        val prediction = svcModelHelper.predict(features)
+        Log.d(TAG, "Prediction: $prediction")
     }
 
     @Deprecated("Deprecated in Java", ReplaceWith("finish()"))
@@ -32,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 /*
+// CameraX implementation
 import android.Manifest
 import android.content.ContentValues
 import android.content.pm.PackageManager
